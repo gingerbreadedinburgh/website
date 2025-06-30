@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gingerbread Edinburgh and Lothian Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255,255,255,0.1) 10px,
+                rgba(255,255,255,0.1) 20px
+            );
+            animation: shimmer 3s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: #ff6b6b;
+            transition: left 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+
+        nav a:hover::before {
+            left: 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            margin: 10px 10px 10px 0;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: slide 3s infinite;
+        }
+
+        @keyframes slide {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .contact-info {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid #27ae60;
+        }
+
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .resource-link {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .resource-link:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(52,152,219,0.3);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gingerbread Edinburgh and Lothian Project</h1>
+            <p>Supporting Single Parent Families Across Scotland</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Home</a></li>
+                <li><a onclick="showSection('about')">About Us</a></li>
+                <li><a onclick="showSection('services')">Services</a></li>
+                <li><a onclick="showSection('jobs')">Jobs</a></li>
+                <li><a onclick="showSection('contact')">Contact</a></li>
+                <li><a onclick="showSection('resources')">Resources</a></li>
+                <li><a onclick="showSection('donate')">Donate</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="home" class="section">
+                <h2>Welcome to Gingerbread Edinburgh and Lothian</h2>
+                <p>We are a dedicated non-profit organization committed to supporting single parent families across Edinburgh and the Lothian region. Our mission is to provide practical support, advice, and resources to help single parents thrive and build stronger, more resilient families.</p>
+                
+                <div class="highlight">
+                    <h3>Empowering Single Parents Since 1970</h3>
+                    <p>Over 50 years of experience supporting families across Scotland</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>🏠 Housing Support</h3>
+                        <p>Get help with housing applications, benefits advice, and finding suitable accommodation for your family.</p>
+                    </div>
+                    <div class="card">
+                        <h3>💼 Employment Support</h3>
+                        <p>Career guidance, job search assistance, and skills development to help you build financial independence.</p>
+                    </div>
+                    <div class="card">
+                        <h3>👨‍👩‍👧‍👦 Family Support</h3>
+                        <p>Emotional support, parenting advice, and connection with other single parent families in your area.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="section hidden">
+                <h2>About Our Organization</h2>
+                <p>Gingerbread Edinburgh and Lothian Project is part of the wider Gingerbread network, working alongside our partners in London and Wales to support single parent families across the UK.</p>
+                
+                <div class="contact-info">
+                    <h3>Organization Details</h3>
+                    <p><strong>Location:</strong> Edinburgh and Lothian region, Scotland</p>
+                    <p><strong>Office Hours:</strong> Monday - Friday: 9:00 AM - 5:00 PM</p>
+                    <p><strong>Phone:</strong> 0131 XXX XXXX (Please update with actual number)</p>
+                    <p><strong>Email:</strong> info@gingerbread-edinburgh.org.uk (Please update with actual email)</p>
+                </div>
+
+                <h3>Our Mission</h3>
+                <p>To champion single parents and their children, providing the support and resources they need to overcome challenges and achieve their goals. We believe every single parent family deserves respect, recognition, and the opportunity to flourish.</p>
+
+                <h3>Our Values</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Empowerment</h3>
+                        <p>We believe in empowering single parents to make informed decisions and take control of their lives.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Respect</h3>
+                        <p>We treat every family with dignity and respect, regardless of their circumstances.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Community</h3>
+                        <p>We foster a sense of community and belonging among single parent families.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="services" class="section hidden">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive range of services designed to support single parents at every stage of their journey.</p>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>Benefits Advice</h3>
+                        <p>Get expert help understanding and claiming the benefits you're entitled to. We'll guide you through the application process and help maximize your income.</p>
+                        <p><strong>Service Charge:</strong> Free of charge</p>
+                    </div>
+                    <div class="card">
+                        <h3>One-to-One Support</h3>
+                        <p>Personal support sessions with our trained advisors to discuss your specific needs and develop action plans.</p>
+                        <p><strong>Service Charge:</strong> Free of charge</p>
+                    </div>
+                    <div class="card">
+                        <h3>Group Support Sessions</h3>
+                        <p>Join other single parents in our regular support groups, workshops, and social activities.</p>
+                        <p><strong>Service Charge:</strong> Free of charge</p>
+                    </div>
+                    <div class="card">
+                        <h3>Legal Advice</h3>
+                        <p>Initial legal advice on family law matters, including child maintenance, custody, and housing issues.</p>
+                        <p><strong>Service Charge:</strong> Free initial consultation</p>
+                    </div>
+                    <div class="card">
+                        <h3>Training and Education</h3>
+                        <p>Access to training courses, educational opportunities, and skill-building workshops.</p>
+                        <p><strong>Service Charge:</strong> Varies by course</p>
+                    </div>
+                    <div class="card">
+                        <h3>Emergency Support</h3>
+                        <p>Crisis support including food parcels, emergency funding, and urgent accommodation assistance.</p>
+                        <p><strong>Service Charge:</strong> Free of charge</p>
+                    </div>
+                </div>
+
+                <div class="highlight">
+                    <h3>Need Help Right Now?</h3>
+                    <p>Our helpline is available during office hours for urgent support and advice.</p>
+                    <button class="btn">Call Our Helpline</button>
+                </div>
+            </div>
+
+            <div id="jobs" class="section hidden">
+                <h2>Current Job Opportunities</h2>
+                <p>Join our team and help make a difference in the lives of single parent families across Edinburgh and Lothian.</p>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>Family Support Worker</h3>
+                        <p><strong>Location:</strong> Edinburgh Office</p>
+                        <p><strong>Contract:</strong> Full-time, Permanent</p>
+                        <p><strong>Salary:</strong> £25,000 - £28,000 per annum</p>
+                        <p>Provide direct support to single parent families, helping them navigate services and overcome challenges.</p>
+                        <button class="btn">Apply Now</button>
+                    </div>
+                    <div class="card">
+                        <h3>Benefits Advisor</h3>
+                        <p><strong>Location:</strong> Lothian Region</p>
+                        <p><strong>Contract:</strong> Part-time, 25 hours per week</p>
+                        <p><strong>Salary:</strong> £22,000 - £24,000 pro rata</p>
+                        <p>Provide expert benefits advice and support to single parents, helping them maximize their income.</p>
+                        <button class="btn">Apply Now</button>
+                    </div>
+                    <div class="card">
+                        <h3>Volunteer Coordinator</h3>
+                        <p><strong>Location:</strong> Edinburgh Office</p>
+                        <p><strong>Contract:</strong> Full-time, Fixed-term (2 years)</p>
+                        <p><strong>Salary:</strong> £26,000 - £29,000 per annum</p>
+                        <p>Recruit, train, and coordinate our volunteer team to support our services and events.</p>
+                        <button class="btn">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>How to Apply</h3>
+                    <p>To apply for any position, please send your CV and cover letter to: jobs@gingerbread-edinburgh.org.uk</p>
+                    <p>Please include the job title in your email subject line.</p>
+                    <p><strong>Application Deadline:</strong> Rolling basis - applications reviewed as received</p>
+                </div>
+
+                <h3>Volunteer Opportunities</h3>
+                <p>We're always looking for volunteers to support our work. Whether you have a few hours a week or can help with special events, we'd love to hear from you.</p>
+                <button class="btn">Become a Volunteer</button>
+            </div>
+
+            <div id="contact" class="section hidden">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for support, information, or to find out how you can help.</p>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>Edinburgh Office</h3>
+                        <p><strong>Address:</strong><br>
+                        [Please insert actual address]<br>
+                        Edinburgh, Scotland</p>
+                        <p><strong>Phone:</strong> 0131 XXX XXXX</p>
+                        <p><strong>Email:</strong> edinburgh@gingerbread-lothian.org.uk</p>
+                    </div>
+                    <div class="card">
+                        <h3>Lothian Outreach</h3>
+                        <p><strong>Covering:</strong><br>
+                        East Lothian, Midlothian, West Lothian</p>
+                        <p><strong>Phone:</strong> 0131 XXX XXXX</p>
+                        <p><strong>Email:</strong> outreach@gingerbread-lothian.org.uk</p>
+                    </div>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Office Hours</h3>
+                    <p><strong>Monday - Thursday:</strong> 9:00 AM - 5:00 PM</p>
+                    <p><strong>Friday:</strong> 9:00 AM - 4:30 PM</p>
+                    <p><strong>Saturday - Sunday:</strong> Closed</p>
+                    <p><strong>Bank Holidays:</strong> Closed</p>
+                </div>
+
+                <div class="highlight">
+                    <h3>Emergency Support</h3>
+                    <p>If you're in crisis and need immediate help outside office hours, please contact:</p>
+                    <p><strong>Samaritans:</strong> 116 123 (free, 24/7)</p>
+                    <p><strong>Edinburgh Council Emergency:</strong> 0131 200 2000</p>
+                </div>
+            </div>
+
+            <div id="resources" class="section hidden">
+                <h2>Resources for Single Parents in Scotland</h2>
+                <p>Find the best advice and support services available to single parents across Scotland.</p>
+
+                <h3>National Resources</h3>
+                <div class="resource-links">
+                    <a href="https://www.citizensadvice.org.uk/scotland/" target="_blank" class="resource-link">Citizens Advice Scotland</a>
+                    <a href="https://www.moneyadvicescotland.org.uk/" target="_blank" class="resource-link">Money Advice Scotland</a>
+                    <a href="https://scotland.shelter.org.uk/" target="_blank" class="resource-link">Shelter Scotland</a>
+                    <a href="https://www.gov.scot/policies/families/" target="_blank" class="resource-link">Scottish Government - Single Parents</a>
+                </div>
+
+                <h3>Benefits and Financial Support</h3>
+                <div class="resource-links">
+                    <a href="https://www.mygov.scot/benefits/" target="_blank" class="resource-link">mygov.scot - Benefits</a>
+                    <a href="https://www.turn2us.org.uk/Benefit-guides/Benefit-Calculator" target="_blank" class="resource-link">Turn2us Benefits Calculator</a>
+                    <a href="https://www.gov.uk/child-maintenance-service" target="_blank" class="resource-link">Child Maintenance Service</a>
+                    <a href="https://www.gov.scot/policies/social-security/scottish-welfare-fund/" target="_blank" class="resource-link">Scottish Welfare Fund</a>
+                </div>
+
+                <h3>Employment and Training</h3>
+                <div class="resource-links">
+                    <a href="https://www.skillsdevelopmentscotland.co.uk/" target="_blank" class="resource-link">Skills Development Scotland</a>
+                    <a href="https://www.gov.uk/contact-jobcentre-plus" target="_blank" class="resource-link">Job Centre Plus</a>
+                    <a href="https://www.gov.uk/tax-credits-calculator" target="_blank" class="resource-link">Working Tax Credit Calculator</a>
+                    <a href="https://www.gov.scot/policies/families/childcare/" target="_blank" class="resource-link">Childcare Support Scotland</a>
+                </div>
+
+                <h3>Housing and Legal</h3>
+                <div class="resource-links">
+                    <a href="https://www.edinburgh.gov.uk/housing" target="_blank" class="resource-link">Edinburgh Council Housing</a>
+                    <a href="https://www.sfha.co.uk/" target="_blank" class="resource-link">Lothian Housing Associations</a>
+                    <a href="https://www.slab.org.uk/" target="_blank" class="resource-link">Scottish Legal Aid</a>
+                    <a href="https://www.familymediationscotland.org.uk/" target="_blank" class="resource-link">Family Mediation Scotland</a>
+                </div>
+
+                <h3>Health and Wellbeing</h3>
+                <div class="resource-links">
+                    <a href="https://www.nhs.uk/mental-health/" target="_blank" class="resource-link">NHS Scotland - Mental Health</a>
+                    <a href="https://www.home-start.org.uk/" target="_blank" class="resource-link">Home-Start Scotland</a>
+                    <a href="https://www.children1st.org.uk/help-for-families/parentline-scotland/" target="_blank" class="resource-link">Parentline Scotland</a>
+                    <a href="https://www.youngminds.org.uk/parent/" target="_blank" class="resource-link">Young Minds - Parent Support</a>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Can't Find What You Need?</h3>
+                    <p>Our team can help you navigate these resources and find the right support for your situation.</p>
+                    <p>Call us on 0131 XXX XXXX or email info@gingerbread-lothian.org.uk</p>
+                </div>
+            </div>
+
+            <div id="donate" class="section hidden">
+                <h2>Support Our Work</h2>
+                <p>Your donations help us continue supporting single parent families across Edinburgh and Lothian. Every contribution makes a real difference.</p>
+
+                <div class="highlight">
+                    <h3>How Your Donation Helps</h3>
+                    <p>£10 could provide emergency food vouchers for a family in crisis<br>
+                    £25 could fund a one-to-one support session<br>
+                    £50 could pay for a training course place<br>
+                    £100 could support a family through our intensive support program</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h3>One-Time Donation</h3>
+                        <p>Make a single donation to support our work with single parent families.</p>
+                        <button class="btn">Donate Now</button>
+                    </div>
+                    <div class="card">
+                        <h3>Monthly Giving</h3>
+                        <p>Join our regular giving program and provide ongoing support to families in need.</p>
+                        <button class="btn">Give Monthly</button>
+                    </div>
+                    <div class="card">
+                        <h3>Fundraising</h3>
+                        <p>Organize your own fundraising event or challenge to support our cause.</p>
+                        <button class="btn">Start Fundraising</button>
+                    </div>
+                </div>
+
+                <h3>Other Ways to Help</h3>
+                <div class="contact-info">
+                    <p><strong>Corporate Partnerships:</strong> We work with businesses to create mutually beneficial partnerships.</p>
+                    <p><strong>Gift Aid:</strong> UK taxpayers can increase their donation by 25% at no extra cost.</p>
+                    <p><strong>Legacy Giving:</strong> Consider including us in your will to support future generations.</p>
+                    <p><strong>In-Kind Donations:</strong> We accept donations of goods, services, and professional expertise.</p>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Banking Details</h3>
+                    <p><strong>Account Name:</strong> Gingerbread Edinburgh and Lothian Project</p>
+                    <p><strong>Sort Code:</strong> XX-XX-XX</p>
+                    <p><strong>Account Number:</strong> XXXXXXXX</p>
+                    <p><strong>Charity Number:</strong> SCXXXXXX</p>
+                    <p><em>Please update with actual banking details</em></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
+            <p>Registered Charity in Scotland. Charity Number: SCXXXXXX</p>
+            <p>Part of the Gingerbread network supporting single parent families across the UK</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+
+        // Show home section by default or section from URL hash
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        });
+
+        // Add smooth scrolling to top when changing sections
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            document.getElementById(sectionId).classList.remove('hidden');
+            window.location.hash = sectionId;
+            
+            // Scroll to top of main content
+            document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
