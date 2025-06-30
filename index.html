@@ -12,219 +12,306 @@
         }
 
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
+            font-family: 'Arial', 'Helvetica', sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #ff8c42 0%, #228b22 50%, #ff6b35 100%);
-            min-height: 100vh;
+            color: #333;
+            background: #ffffff;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background: #fefefe;
-            min-height: 100vh;
-            box-shadow: 0 0 30px rgba(0,0,0,0.15);
+            background: #ffffff;
         }
 
         header {
-            background: linear-gradient(135deg, #ff8c42, #32cd32, #ff6b35);
-            color: white;
-            padding: 2.5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 12px,
-                rgba(255,255,255,0.1) 12px,
-                rgba(255,255,255,0.1) 24px
-            );
-            animation: shimmer 4s linear infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%); }
-            100% { transform: translateX(100%) translateY(100%); }
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.8rem;
-            position: relative;
-            z-index: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 1.3rem;
-            opacity: 0.95;
-            position: relative;
-            z-index: 1;
-            font-style: italic;
-        }
-
-        nav {
-            background: linear-gradient(135deg, #228b22, #32cd32);
-            padding: 0;
+            background: #ffffff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2d5a3d;
+        }
+
+        .logo .gingerbread {
+            color: #2d5a3d;
+        }
+
+        .logo .star {
+            color: #ff6b35;
+            margin-left: 5px;
+        }
+
+        .contact-header {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .phone-number {
+            color: #2d5a3d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .donate-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .donate-btn:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        nav {
+            background: #ffffff;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav li {
-            margin: 0;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         nav a {
-            display: block;
-            color: white;
+            color: #2d5a3d;
             text-decoration: none;
-            padding: 1rem 1.8rem;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
             position: relative;
-            overflow: hidden;
             cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: #ff8c42;
-            transition: left 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            background: linear-gradient(135deg, #ff8c42, #ffa500);
-            transform: translateY(-2px);
+            color: #ff6b35;
         }
 
-        nav a:hover::before {
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
             left: 0;
+            width: 0;
+            height: 3px;
+            background: #ff6b35;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2d5a3d 0%, #4a8c6a 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .placeholder-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(45deg, #ff6b35, #ffa500);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
         }
 
         main {
-            padding: 2.5rem;
-            background: #fefefe;
+            padding: 0;
         }
 
         .section {
-            margin-bottom: 3rem;
-            padding: 2.5rem;
-            background: linear-gradient(135deg, #ffffff, #f0fff0);
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 4px solid transparent;
-            border-image: linear-gradient(45deg, #ff8c42, #32cd32) 1;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        .section:nth-child(even) {
+            background: #f8f9fa;
         }
 
         .section h2 {
-            color: #2c5530;
-            margin-bottom: 1.8rem;
-            font-size: 2.3rem;
-            position: relative;
-            padding-bottom: 12px;
+            color: #2d5a3d;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-align: center;
             font-weight: bold;
         }
 
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 70px;
-            height: 4px;
-            background: linear-gradient(45deg, #ff8c42, #32cd32);
-            border-radius: 2px;
+        .section p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .card {
             background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border-left: 5px solid #32cd32;
-            border-bottom: 2px solid #ff8c42;
+            text-align: center;
+            border-top: 4px solid #4CAF50;
         }
 
         .card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-            border-left-color: #ff8c42;
-            border-bottom-color: #32cd32;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .card h3 {
-            color: #2c5530;
-            margin-bottom: 1.2rem;
-            font-size: 1.4rem;
+            color: #2d5a3d;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
             font-weight: bold;
         }
 
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         .location-card {
-            background: linear-gradient(135deg, #f0fff0, #e6ffe6);
-            border-left: 5px solid #228b22;
+            text-align: left;
+            border-top-color: #ff6b35;
         }
 
         .location-card h3 {
-            color: #1e4d1e;
-            font-size: 1.5rem;
+            color: #ff6b35;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .times {
-            background: linear-gradient(135deg, #fff8dc, #ffefd5);
-            padding: 1.2rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            border-left: 4px solid #ff8c42;
+            background: #f0f8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #4CAF50;
+        }
+
+        .times h4 {
+            color: #2d5a3d;
+            margin-bottom: 0.5rem;
+        }
+
+        .fee-section {
+            background: #f8f9fa;
         }
 
         .fee-table {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
             margin: 2rem 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         }
 
         .fee-table table {
@@ -233,107 +320,61 @@
         }
 
         .fee-table th {
-            background: linear-gradient(135deg, #32cd32, #228b22);
+            background: #2d5a3d;
             color: white;
-            padding: 1rem;
+            padding: 1.2rem;
             text-align: left;
             font-weight: bold;
         }
 
         .fee-table td {
-            padding: 1rem;
+            padding: 1.2rem;
             border-bottom: 1px solid #e0e0e0;
         }
 
         .fee-table tr:nth-child(even) {
-            background: #f9fff9;
+            background: #f8f9fa;
         }
 
         .fee-table tr:hover {
-            background: #f0fff0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff8c42, #32cd32);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            margin: 10px 10px 10px 0;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255,255,255,0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-            background: linear-gradient(45deg, #32cd32, #ff8c42);
-        }
-
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .highlight {
-            background: linear-gradient(135deg, #ff8c42, #32cd32);
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 2.5rem 0;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        }
-
-        .highlight::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: slide 3s infinite;
-        }
-
-        @keyframes slide {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            background: #f0f8f0;
         }
 
         .contact-info {
-            background: linear-gradient(135deg, #e6ffe6, #ccffcc);
-            padding: 1.8rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-            border-left: 5px solid #228b22;
+            background: #e8f5e8;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #4CAF50;
         }
 
         .contact-info h3 {
-            color: #1e4d1e;
+            color: #2d5a3d;
             margin-bottom: 1rem;
+        }
+
+        .bank-details {
+            background: #2d5a3d;
+            color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .bank-details h3 {
+            color: #4CAF50;
+            margin-bottom: 1.5rem;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            font-weight: bold;
         }
 
         .resource-links {
@@ -344,89 +385,97 @@
         }
 
         .resource-link {
-            background: linear-gradient(135deg, #32cd32, #228b22);
+            background: #2d5a3d;
             color: white;
-            padding: 1.2rem;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: 12px;
             text-decoration: none;
             transition: all 0.3s ease;
             text-align: center;
             font-weight: bold;
-            box-shadow: 0 4px 12px rgba(34,139,34,0.3);
         }
 
         .resource-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 18px rgba(34,139,34,0.4);
-            background: linear-gradient(135deg, #ff8c42, #ffa500);
-        }
-
-        .bank-details {
-            background: linear-gradient(135deg, #2c5530, #1e4d1e);
-            color: white;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 2rem 0;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(44,85,48,0.3);
-        }
-
-        .bank-details h3 {
-            color: #90ee90;
-            margin-bottom: 1rem;
+            background: #ff6b35;
+            transform: translateY(-3px);
         }
 
         footer {
-            background: linear-gradient(135deg, #2c5530, #1e4d1e);
+            background: #2d5a3d;
             color: white;
             text-align: center;
-            padding: 2.5rem;
-            margin-top: 3rem;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .hidden {
             display: none;
         }
 
-        .important-notice {
-            background: linear-gradient(135deg, #dc143c, #b22222);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(220,20,60,0.3);
-        }
-
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
 
             nav ul {
                 flex-direction: column;
-            }
-
-            main {
-                padding: 1.5rem;
+                gap: 1rem;
+                text-align: center;
             }
 
             .section {
-                padding: 1.5rem;
+                padding: 2rem 1rem;
             }
 
             .grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-header {
+                flex-direction: column;
+            }
+        }
+
+        /* Loading animation for smooth transitions */
+        .section {
+            opacity: 0;
+            animation: fadeIn 0.6s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Gingerbread Edinburgh and Lothian Project</h1>
-            <p>Supporting Single Parent Families Across Scotland Since 1970</p>
+            <div class="header-content">
+                <div class="logo">
+                    <span class="gingerbread">Gingerbread</span>
+                    <span class="star">*</span>
+                </div>
+                <div class="contact-header">
+                    <a href="tel:01314781391" class="phone-number">📞 0131 478 1391</a>
+                    <a href="#contact" onclick="showSection('contact')" class="donate-btn">Get In Touch</a>
+                </div>
+            </div>
         </header>
 
         <nav>
@@ -442,33 +491,51 @@
         </nav>
 
         <main>
-            <div id="home" class="section">
-                <h2>Welcome to Gingerbread Edinburgh and Lothian</h2>
-                <p>We are a dedicated non-profit organization committed to supporting single parent families across Edinburgh and the Lothian region. For over 50 years, we have provided practical childcare support, after-school clubs, and holiday programs to help single parents thrive and build stronger, more resilient families.</p>
-                
-                <div class="highlight">
-                    <h3>Quality Childcare & After School Support</h3>
-                    <p>Professional after-school clubs and holiday programs across four Edinburgh locations</p>
-                </div>
-
-                <div class="grid">
-                    <div class="card">
-                        <h3>🏫 After School Clubs</h3>
-                        <p>Monday to Friday after-school care at four Edinburgh locations: Dalry, Lorne, St Cuthbert's, and Tollcross primary schools.</p>
-                    </div>
-                    <div class="card">
-                        <h3>🎯 Holiday Programs</h3>
-                        <p>Full-day holiday clubs during school breaks with activities, trips, and professional supervision from 8:30am to 5:25pm.</p>
-                    </div>
-                    <div class="card">
-                        <h3>👨‍👩‍👧‍👦 Family Support</h3>
-                        <p>Dedicated support for single parent families with flexible booking options and childcare voucher acceptance.</p>
+            <div id="home" class="section" style="padding: 0;">
+                <div class="hero">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>We are Gingerbread Edinburgh & Lothian</h1>
+                            <p>Supporting single parent families across Edinburgh and Lothian with quality childcare, after-school clubs, and holiday programs.</p>
+                            <button class="cta-button" onclick="showSection('contact')">Get In Touch</button>
+                        </div>
+                        <div class="hero-image">
+                            <div class="placeholder-image">
+                                👨‍👩‍👧‍👦<br>
+                                Professional Childcare<br>
+                                Since 1970
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="important-notice">
-                    <h3>📞 Contact Us Today</h3>
-                    <p>Office: 0131 478 1391 | Mobile: 07825 925846</p>
+                <div class="section">
+                    <h2>Our Services</h2>
+                    <p>We provide comprehensive childcare support across four Edinburgh locations to help single parent families thrive.</p>
+                    
+                    <div class="grid">
+                        <div class="card">
+                            <div class="card-icon">🏫</div>
+                            <h3>After School Clubs</h3>
+                            <p>Professional supervision at Dalry, Lorne, St Cuthbert's, and Tollcross primary schools. Monday-Friday with flexible timing options.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">🎯</div>
+                            <h3>Holiday Programs</h3>
+                            <p>Full-day holiday clubs during school breaks with educational trips, activities, and structured learning from 8:30am-5:25pm.</p>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon">💰</div>
+                            <h3>Affordable Fees</h3>
+                            <p>Competitive rates for single and two-parent families. We accept childcare vouchers and various funding support options.</p>
+                        </div>
+                    </div>
+
+                    <div class="important-notice">
+                        <h3>📞 Ready to Register?</h3>
+                        <p>Office: 0131 478 1391 | Mobile: 07825 925846</p>
+                        <p style="margin-top: 1rem;">Contact us today to discuss your childcare needs and secure a place for your child.</p>
+                    </div>
                 </div>
             </div>
 
@@ -480,7 +547,7 @@
                     <div class="card">
                         <h3>After School Clubs</h3>
                         <p><strong>What's Included:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Professional supervision and activities</li>
                             <li>Healthy snacks (fruit provided)</li>
                             <li>Homework support</li>
@@ -494,7 +561,7 @@
                         <h3>Holiday Clubs</h3>
                         <p><strong>Full Day Care:</strong> 8:30am - 5:25pm (Collection by 5:30pm)</p>
                         <p><strong>Activities Include:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Educational trips and outings</li>
                             <li>Arts and crafts</li>
                             <li>Sports and games</li>
@@ -512,7 +579,7 @@
                     <div class="card">
                         <h3>Additional Support</h3>
                         <p><strong>We Accept:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Childcare vouchers through employers</li>
                             <li>Universal Credit support</li>
                             <li>Job Centre payments</li>
@@ -528,7 +595,7 @@
                 </div>
             </div>
 
-            <div id="fees" class="section hidden">
+            <div id="fees" class="section fee-section hidden">
                 <h2>Fees & Payment Structure</h2>
                 
                 <div class="important-notice">
@@ -546,7 +613,7 @@
                     <p><strong>Reference:</strong> (Child's name + club they attend)</p>
                 </div>
 
-                <h3>Single Parent Family Fees</h3>
+                <h3 style="text-align: center; margin: 3rem 0 2rem 0;">Single Parent Family Fees</h3>
                 <div class="fee-table">
                     <table>
                         <thead>
@@ -610,7 +677,7 @@
                     </table>
                 </div>
 
-                <h3>Two Parent Family Fees</h3>
+                <h3 style="text-align: center; margin: 3rem 0 2rem 0;">Two Parent Family Fees</h3>
                 <div class="fee-table">
                     <table>
                         <thead>
@@ -657,12 +724,6 @@
                     <p><strong>Credits:</strong> Unused credits will be kept for future use - no cash reimbursements</p>
                     <p><strong>Late Collection Fee:</strong> £25 for continuous late collection</p>
                     <p><strong>Holiday Club Penalty:</strong> £40 per day if child attends without confirmed booking</p>
-                </div>
-
-                <div class="highlight">
-                    <h3>Need Help with Fees?</h3>
-                    <p>If you're struggling with payments, please talk to us. We're here to help find solutions.</p>
-                    <button class="btn">Contact Our Office</button>
                 </div>
             </div>
 
@@ -713,23 +774,13 @@
                             <p><strong>Friday:</strong> 12:00 noon - 6:00pm</p>
                             <p><em>Collection by 5:45pm</em></p>
                         </div>
+                        <div class="contact-info" style="margin-top: 1rem;">
+                            <h4>🎪 Holiday Club Venue</h4>
+                            <p><strong>Times:</strong> Monday to Friday, 8:30am - 5:25pm</p>
+                            <p><strong>Collection:</strong> By 5:30pm</p>
+                            <p><em>Separate booking form required</em></p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="highlight">
-                    <h3>🎪 Holiday Club Location</h3>
-                    <p><strong>Venue:</strong> Tollcross Primary School</p>
-                    <p><strong>Times:</strong> Monday to Friday, 8:30am - 5:25pm</p>
-                    <p><strong>Collection:</strong> By 5:30pm</p>
-                    <p><em>Separate booking form required for holiday clubs</em></p>
-                </div>
-
-                <div class="contact-info">
-                    <h3>📞 Contact Information</h3>
-                    <p><strong>Office Phone:</strong> 0131 478 1391</p>
-                    <p><strong>Mobile:</strong> 07825 925846</p>
-                    <p><strong>Office Hours:</strong> Please contact for current hours</p>
-                    <p><em>Please contact office or play leader for public holiday dates and any schedule changes</em></p>
                 </div>
             </div>
 
@@ -740,8 +791,8 @@
                 <div class="grid">
                     <div class="card">
                         <h3>📞 Main Office</h3>
-                        <p><strong>Landline:</strong> 0131 478 1391</p>
-                        <p><strong>Mobile:</strong> 07825 925846</p>
+                        <p><strong>Landline:</strong> <a href="tel:01314781391">0131 478 1391</a></p>
+                        <p><strong>Mobile:</strong> <a href="tel:07825925846">07825 925846</a></p>
                         <p><strong>Email:</strong> [Please provide email address]</p>
                         <p><strong>Address:</strong> [Please provide office address]</p>
                     </div>
@@ -758,19 +809,13 @@
                     <p><strong>Office Hours:</strong> [Please provide current office hours]</p>
                     <p><strong>Emergency Contact:</strong> 07825 925846</p>
                 </div>
-
-                <div class="highlight">
-                    <h3>Ready to Register?</h3>
-                    <p>Contact us today to discuss your childcare needs and secure a place for your child.</p>
-                    <button class="btn">Get In Touch</button>
-                </div>
             </div>
 
             <div id="resources" class="section hidden">
                 <h2>Resources for Single Parents in Scotland</h2>
                 <p>Find the best advice and support services available to single parents across Scotland.</p>
 
-                <h3>National Resources</h3>
+                <h3 style="text-align: center; margin: 2rem 0;">National Resources</h3>
                 <div class="resource-links">
                     <a href="https://www.citizensadvice.org.uk/scotland/" target="_blank" class="resource-link">Citizens Advice Scotland</a>
                     <a href="https://www.moneyadvicescotland.org.uk/" target="_blank" class="resource-link">Money Advice Scotland</a>
@@ -778,7 +823,7 @@
                     <a href="https://www.gov.scot/policies/families/" target="_blank" class="resource-link">Scottish Government - Single Parents</a>
                 </div>
 
-                <h3>Benefits and Financial Support</h3>
+                <h3 style="text-align: center; margin: 2rem 0;">Benefits and Financial Support</h3>
                 <div class="resource-links">
                     <a href="https://www.mygov.scot/benefits/" target="_blank" class="resource-link">mygov.scot - Benefits</a>
                     <a href="https://www.turn2us.org.uk/Benefit-guides/Benefit-Calculator" target="_blank" class="resource-link">Turn2us Benefits Calculator</a>
@@ -786,7 +831,7 @@
                     <a href="https://www.gov.scot/policies/social-security/scottish-welfare-fund/" target="_blank" class="resource-link">Scottish Welfare Fund</a>
                 </div>
 
-                <h3>Employment and Training</h3>
+                <h3 style="text-align: center; margin: 2rem 0;">Employment and Training</h3>
                 <div class="resource-links">
                     <a href="https://www.skillsdevelopmentscotland.co.uk/" target="_blank" class="resource-link">Skills Development Scotland</a>
                     <a href="https://www.gov.uk/contact-jobcentre-plus" target="_blank" class="resource-link">Job Centre Plus</a>
@@ -794,7 +839,7 @@
                     <a href="https://www.gov.scot/policies/families/childcare/" target="_blank" class="resource-link">Childcare Support Scotland</a>
                 </div>
 
-                <h3>Housing and Legal</h3>
+                <h3 style="text-align: center; margin: 2rem 0;">Housing and Legal</h3>
                 <div class="resource-links">
                     <a href="https://www.edinburgh.gov.uk/housing" target="_blank" class="resource-link">Edinburgh Council Housing</a>
                     <a href="https://www.sfha.co.uk/" target="_blank" class="resource-link">Lothian Housing Associations</a>
@@ -802,7 +847,7 @@
                     <a href="https://www.familymediationscotland.org.uk/" target="_blank" class="resource-link">Family Mediation Scotland</a>
                 </div>
 
-                <h3>Health and Wellbeing</h3>
+                <h3 style="text-align: center; margin: 2rem 0;">Health and Wellbeing</h3>
                 <div class="resource-links">
                     <a href="https://www.nhs.uk/mental-health/" target="_blank" class="resource-link">NHS Scotland - Mental Health</a>
                     <a href="https://www.home-start.org.uk/" target="_blank" class="resource-link">Home-Start Scotland</a>
@@ -825,7 +870,7 @@
                     <div class="card">
                         <h3>Current Opportunities</h3>
                         <p>We are always looking for passionate individuals to join our team:</p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Play Leaders</li>
                             <li>After School Club Assistants</li>
                             <li>Holiday Club Coordinators</li>
@@ -837,7 +882,7 @@
                     <div class="card">
                         <h3>Volunteer Opportunities</h3>
                         <p>Support our mission through volunteering:</p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Activity support during clubs</li>
                             <li>Trip assistance</li>
                             <li>Administrative help</li>
@@ -848,7 +893,7 @@
 
                     <div class="card">
                         <h3>Benefits of Working With Us</h3>
-                        <ul style="margin: 1rem 0; padding-left: 2rem;">
+                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
                             <li>Competitive rates</li>
                             <li>Flexible scheduling</li>
                             <li>Training provided</li>
@@ -866,38 +911,44 @@
                     <p><strong>Email:</strong> [Please provide HR email address]</p>
                 </div>
 
-                <div class="highlight">
-                    <h3>Ready to Make a Difference?</h3>
-                    <p>Join our team and help support single parent families in Edinburgh and Lothian.</p>
-                    <button class="btn">Apply Today</button>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="cta-button" onclick="showSection('contact')">Apply Today</button>
                 </div>
             </div>
         </main>
 
         <footer>
-            <p>&copy; 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
-            <p>Registered Charity in Scotland. Charity Number: [Please provide charity number]</p>
-            <p>Part of the Gingerbread network supporting single parent families across the UK</p>
-            <p style="margin-top: 1rem;">Office: 0131 478 1391 | Mobile: 07825 925846</p>
+            <div class="footer-content">
+                <p>&copy; 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
+                <p>Registered Charity in Scotland. Charity Number: [Please provide charity number]</p>
+                <p>Part of the Gingerbread network supporting single parent families across the UK</p>
+                <p style="margin-top: 1.5rem; font-weight: bold;">Office: 0131 478 1391 | Mobile: 07825 925846</p>
+            </div>
         </footer>
     </div>
 
     <script>
         function showSection(sectionId) {
             // Hide all sections
-            const sections = document.querySelectorAll('.section');
+            const sections = document.querySelectorAll('.section, .hero');
             sections.forEach(section => {
                 section.classList.add('hidden');
             });
             
             // Show the selected section
-            document.getElementById(sectionId).classList.remove('hidden');
-            
-            // Update URL hash
-            window.location.hash = sectionId;
-            
-            // Scroll to top of main content
-            document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                
+                // Smooth scroll to top
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL hash
+                window.location.hash = sectionId;
+            }
         }
 
         // Show home section by default or section from URL hash
@@ -908,6 +959,17 @@
             } else {
                 showSection('home');
             }
+        });
+
+        // Add click handlers for phone numbers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Make phone numbers clickable
+            const phoneNumbers = document.querySelectorAll('a[href^="tel:"]');
+            phoneNumbers.forEach(phone => {
+                phone.style.color = '#2d5a3d';
+                phone.style.textDecoration = 'none';
+                phone.style.fontWeight = 'bold';
+            });
         });
     </script>
 </body>
