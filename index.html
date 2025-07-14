@@ -44,18 +44,34 @@
         .logo {
             display: flex;
             align-items: center;
-            font-size: 2rem;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiByeD0iMTAiIGZpbGw9IiNmZmJiMzMiLz4KPHN0eWxlPi5naW5nZXJicmVhZC10ZXh0IHsgZm9udC1mYW1pbHk6IEFyaWFsLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDE2cHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBmaWxsOiAjYjU3YzAwOyB9PC9zdHlsZT4KPHN0eWxlPi5naW5nZXJicmVhZC1maWd1cmUgeyBmaWxsOiAjYjU3YzAwOyB9PC9zdHlsZT4KPHRleHQgeD0iMTAwIiB5PSIzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImdpbmdlcmJyZWFkLXRleHQiPkdpbmdlcmJyZWFkPC90ZXh0Pgo8IS0tIFNpbXBsaWZpZWQgZmFtaWx5IGZpZ3VyZSAtLT4KPGNpcmNsZSBjeD0iODAiIGN5PSI4MCIgcj0iMTUiIGNsYXNzPSJnaW5nZXJicmVhZC1maWd1cmUiLz4KPGNpcmNsZSBjeD0iMTIwIiBjeT0iODAiIHI9IjE1IiBjbGFzcz0iZ2luZ2VyYnJlYWQtZmlndXJlIi8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9IjEyMCIgcj0iMTIiIGNsYXNzPSJnaW5nZXJicmVhZC1maWd1cmUiLz4KPGNpcmNsZSBjeD0iNzAiIGN5PSIxMjAiIHI9IjEwIiBjbGFzcz0iZ2luZ2VyYnJlYWQtZmlndXJlIi8+CjxjaXJjbGUgY3g9IjEzMCIgY3k9IjEyMCIgcj0iMTAiIGNsYXNzPSJnaW5nZXJicmVhZC1maWd1cmUiLz4KPHN0eWxlPi5naW5nZXJicmVhZC1hcm1zIHsgc3Ryb2tlOiAjYjU3YzAwOyBzdHJva2Utd2lkdGg6IDM7IGZpbGw6IG5vbmU7IH08L3N0eWxlPgo8cGF0aCBkPSJNIDYwIDcwIEwgMTQwIDcwIiBjbGFzcz0iZ2luZ2VyYnJlYWQtYXJtcyIvPgo8cGF0aCBkPSJNIDkwIDEzMCBMIDExMCAxMzAiIGNsYXNzPSJnaW5nZXJicmVhZC1hcm1zIi8+Cjwvc3ZnPgo=') no-repeat center;
+            background-size: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text .gingerbread {
+            color: #2d5a3d;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: #2d5a3d;
+            line-height: 1.1;
         }
 
-        .logo .gingerbread {
-            color: #2d5a3d;
-        }
-
-        .logo .star {
-            color: #ff6b35;
-            margin-left: 5px;
+        .logo-text .subtitle {
+            color: #666;
+            font-size: 0.9rem;
+            font-weight: normal;
         }
 
         .contact-header {
@@ -468,8 +484,11 @@
         <header>
             <div class="header-content">
                 <div class="logo">
-                    <span class="gingerbread">Gingerbread</span>
-                    <span class="star">*</span>
+                    <div class="logo-image"></div>
+                    <div class="logo-text">
+                        <span class="gingerbread">Gingerbread</span>
+                        <span class="subtitle">Edinburgh & Lothian</span>
+                    </div>
                 </div>
                 <div class="contact-header">
                     <a href="tel:01314781391" class="phone-number">📞 0131 478 1391</a>
