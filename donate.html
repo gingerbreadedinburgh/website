@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Support Gingerbread Edinburgh & Lothian — donate to help single parent families access quality childcare across Edinburgh." />
+  <title>Donate | Gingerbread Edinburgh & Lothian</title>
+  <link rel="icon" type="image/jpeg" href="Gingerbread%20LOGO.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .donate-hero {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .donate-hero::before {
+      content: '💚';
+      position: absolute;
+      top: -20px;
+      right: 5%;
+      font-size: 12rem;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .donate-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .donate-hero p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .donation-amounts {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .amount-pill {
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.3);
+      color: var(--white);
+      padding: 0.6rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="nav-logo-text">
+          <span class="brand">Gingerbread</span>
+          <span class="tagline">Edinburgh & Lothian</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="fees.html">Fees & Booking</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- DONATE HERO -->
+  <div class="donate-hero">
+    <div class="breadcrumb" style="margin-bottom:1.5rem;">
+      <a href="index.html" style="opacity:0.7;">Home</a> <span>›</span> <span>Donate</span>
+    </div>
+    <h1>Support Our Mission</h1>
+    <p>Every donation, no matter the size, helps us provide quality childcare and support for single parent families across Edinburgh and Lothian.</p>
+    <div class="donation-amounts">
+      <span class="amount-pill">£5</span>
+      <span class="amount-pill">£10</span>
+      <span class="amount-pill">£25</span>
+      <span class="amount-pill">£50</span>
+      <span class="amount-pill">Your Choice</span>
+    </div>
+  </div>
+
+  <!-- IMPACT -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="label-tag reveal">Your Impact</div>
+      <h2 class="section-title reveal">What Your Donation Supports</h2>
+      <p class="section-subtitle reveal">Your generosity directly funds the services that make a real difference to Edinburgh's single parent families.</p>
+
+      <div class="impact-grid">
+        <div class="impact-item reveal reveal-delay-1">
+          <div class="icon">🍎</div>
+          <p>Healthy snacks and nutritious fruit for children every day at our clubs</p>
+        </div>
+        <div class="impact-item reveal reveal-delay-2">
+          <div class="icon">🎨</div>
+          <p>Better equipment, art supplies, and learning resources for our clubs</p>
+        </div>
+        <div class="impact-item reveal reveal-delay-3">
+          <div class="icon">🎮</div>
+          <p>Educational games, books, and structured learning activities</p>
+        </div>
+        <div class="impact-item reveal reveal-delay-4">
+          <div class="icon">🚌</div>
+          <p>Educational trips and outings during our holiday club programmes</p>
+        </div>
+        <div class="impact-item reveal reveal-delay-1">
+          <div class="icon">👩‍🏫</div>
+          <p>Training and development for our staff to deliver the best possible care</p>
+        </div>
+        <div class="impact-item reveal reveal-delay-2">
+          <div class="icon">💚</div>
+          <p>Keeping fees affordable so no single parent family is priced out of care</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO DONATE -->
+  <section class="section section-alt">
+    <div class="container" style="max-width: 700px;">
+      <div class="label-tag reveal">How to Give</div>
+      <h2 class="section-title reveal">Make Your Donation</h2>
+      <p class="section-subtitle reveal">All donations are made by bank transfer to ensure they go directly to supporting our services.</p>
+
+      <div class="bank-box reveal">
+        <h3>🏦 Donation Bank Details</h3>
+        <p><strong>Bank:</strong> Bank of Scotland</p>
+        <p><strong>Account Name:</strong> Gingerbread</p>
+        <p><strong>Sort Code:</strong> 80-11-20</p>
+        <p><strong>Account Number:</strong> 00275813</p>
+        <p style="margin-top:1rem;"><strong>Reference:</strong> DONATION</p>
+        <p style="margin-top:0.5rem; font-size:0.82rem; opacity:0.7;">Please use the reference "DONATION" so we can properly record and thank you for your contribution.</p>
+      </div>
+
+      <div class="notice-green reveal">
+        <h3>🙏 Thank You</h3>
+        <p>As a registered Scottish charity (SC125546), all donations are used directly to support our childcare services and reduce costs for single parent families.</p>
+        <p style="margin-top:0.5rem;">If you'd like a receipt or acknowledgement of your donation, please email us after transferring.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OTHER WAYS TO HELP -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="label-tag reveal">Other Ways to Help</div>
+      <h2 class="section-title reveal">More Ways to Support Us</h2>
+      <p class="section-subtitle reveal">Donating isn't the only way to make a difference.</p>
+      <div class="grid-3">
+        <div class="card card-accent-green reveal reveal-delay-1">
+          <div class="card-icon">🤝</div>
+          <h3>Volunteer</h3>
+          <p>Donate your time and skills at our clubs, during trips, or with administrative support. Every hour counts.</p>
+          <br />
+          <a href="jobs.html" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1.4rem;">Find Out More</a>
+        </div>
+        <div class="card card-accent-orange reveal reveal-delay-2">
+          <div class="card-icon">📢</div>
+          <h3>Spread the Word</h3>
+          <p>Tell other single parents about our services, or share us on social media. Awareness is invaluable.</p>
+          <br />
+          <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+            <a href="#" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1rem;">📘 Facebook</a>
+            <a href="#" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1rem;">📷 Instagram</a>
+          </div>
+        </div>
+        <div class="card card-accent-green reveal reveal-delay-3">
+          <div class="card-icon">🏢</div>
+          <h3>Corporate Giving</h3>
+          <p>Is your organisation looking for a local charity partnership? We'd love to hear from you about corporate support opportunities.</p>
+          <br />
+          <a href="contact.html" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1.4rem;">Get In Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2 class="reveal">Every Penny Makes a Difference</h2>
+    <p class="reveal reveal-delay-1">Behind every donation is a single parent who can go to work knowing their child is safe, happy, and cared for.</p>
+    <div class="cta-banner-buttons reveal reveal-delay-2">
+      <a href="contact.html" class="btn btn-orange">Get In Touch</a>
+      <a href="services.html" class="btn btn-outline-white">Our Services</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="brand-name">Gingerbread Edinburgh & Lothian</div>
+        <p>Supporting single parent families across Edinburgh with quality childcare since 1985.</p>
+        <div class="footer-socials">
+          <a href="#" target="_blank" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" target="_blank" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="fees.html">Fees & Booking</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="jobs.html">Jobs & Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support Us</h4>
+        <ul>
+          <li><a href="donate.html">Make a Donation</a></li>
+          <li><a href="jobs.html">Volunteer</a></li>
+          <li><a href="donate.html">Corporate Giving</a></li>
+          <li><a href="donate.html">Spread the Word</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span><a href="tel:07825925846" style="color:rgba(255,255,255,0.65);">07825 925846</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:contact@gingerbreadcharity.org" style="color:rgba(255,255,255,0.65);">contact@gingerbreadcharity.org</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>117–119 Fountainbridge, Edinburgh EH3 9QG</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🕐</span>
+          <span>Mon–Fri: 10am–5pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
+      <span class="charity-badge">Registered Charity SC125546</span>
+      <p>Part of the Gingerbread network supporting single parent families across the UK</p>
+    </div>
+  </footer>
+
+  <a href="tel:07825925846" class="float-phone" aria-label="Call us">
+    📞
+    <span class="tooltip">07825 925846</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>

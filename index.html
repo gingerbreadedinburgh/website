@@ -1,1252 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gingerbread Edinburgh and Lothian Project</title>
-    <link rel="icon" type="image/x-icon" href="./Gingerbread%20LOGO.jpg">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #ffffff;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #ffffff;
-        }
-
-        header {
-            background: #ffffff;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo-image {
-    width: 60px;
-    height: 60px;
-    background: url('./Gingerbread%20LOGO.jpg') no-repeat center;
-    background-size: contain;
-    border-radius: 8px;
-    flex-shrink: 0;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-text .gingerbread {
-            color: #2d5a3d;
-            font-size: 1.8rem;
-            font-weight: bold;
-            line-height: 1.1;
-        }
-
-        .logo-text .subtitle {
-            color: #666;
-            font-size: 0.9rem;
-            font-weight: normal;
-        }
-
-        .contact-header {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .phone-number {
-            color: #2d5a3d;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .donate-btn {
-            background: #ff6b35;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .donate-btn:hover {
-            background: #e55a2b;
-            transform: translateY(-2px);
-        }
-
-        nav {
-            background: #ffffff;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        nav a {
-            color: #2d5a3d;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 0;
-            position: relative;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ff6b35;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: #ff6b35;
-            transition: width 0.3s ease;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #2d5a3d 0%, #4a8c6a 100%);
-            color: white;
-            padding: 0;
-            position: relative;
-            overflow: hidden;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-
-        .hero-text p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .hero-image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .placeholder-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(45deg, #ff6b35, #ffa500);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .cta-button {
-            background: #4CAF50;
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .cta-button:hover {
-            background: #45a049;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
-        }
-
-        main {
-            padding: 0;
-        }
-
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .section h2 {
-            color: #2d5a3d;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .section p {
-            font-size: 1.1rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            margin-top: 2rem;
-        }
-
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            text-align: center;
-            border-top: 4px solid #4CAF50;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-
-        .card h3 {
-            color: #2d5a3d;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .location-card {
-            text-align: left;
-            border-top-color: #ff6b35;
-        }
-
-        .location-card h3 {
-            color: #ff6b35;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .times {
-            background: #f0f8f0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid #4CAF50;
-        }
-
-        .times h4 {
-            color: #2d5a3d;
-            margin-bottom: 0.5rem;
-        }
-
-        .fee-section {
-            background: #f8f9fa;
-        }
-
-        .fee-table {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            margin: 2rem 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .fee-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .fee-table th {
-            background: #2d5a3d;
-            color: white;
-            padding: 1.2rem;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        .fee-table td {
-            padding: 1.2rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .fee-table tr:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        .fee-table tr:hover {
-            background: #f0f8f0;
-        }
-
-        .contact-info {
-            background: #e8f5e8;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            border-left: 5px solid #4CAF50;
-        }
-
-        .contact-info h3 {
-            color: #2d5a3d;
-            margin-bottom: 1rem;
-        }
-
-        .bank-details {
-            background: #2d5a3d;
-            color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            text-align: center;
-        }
-
-        .bank-details h3 {
-            color: #4CAF50;
-            margin-bottom: 1.5rem;
-        }
-
-        .important-notice {
-            background: linear-gradient(135deg, #dc3545, #c82333);
-            color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 2rem 0;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .resource-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .resource-link {
-            background: #2d5a3d;
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .resource-link:hover {
-            background: #ff6b35;
-            transform: translateY(-3px);
-        }
-
-        /* New Styles for Enhanced Homepage */
-        .welcome-section {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid #ff6b35;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #2d5a3d;
-            display: block;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-        }
-
-        .testimonials-section {
-            background: #2d5a3d;
-            color: white;
-            padding: 4rem 2rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-            color: #4CAF50;
-        }
-
-        .news-section {
-            background: #f8f9fa;
-            padding: 4rem 2rem;
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .news-date {
-            background: #ff6b35;
-            color: white;
-            padding: 1rem;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .news-content {
-            padding: 2rem;
-        }
-
-        .services-preview {
-            background: white;
-            padding: 4rem 2rem;
-        }
-
-        .service-highlight {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .highlight-card {
-            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 5px solid #4CAF50;
-            text-align: center;
-        }
-
-        .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background: #2d5a3d;
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-
-            .section {
-                padding: 2rem 1rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-header {
-                flex-direction: column;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Loading animation for smooth transitions */
-        .section {
-            opacity: 0;
-            animation: fadeIn 0.6s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gingerbread Edinburgh & Lothian — Supporting single parent families with quality childcare, after-school clubs, and holiday programmes since 1985. Registered Charity SC125546." />
+  <title>Gingerbread Edinburgh & Lothian | Supporting Single Parent Families</title>
+  <link rel="icon" type="image/jpeg" href="Gingerbread%20LOGO.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ---- HERO ---- */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 560px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(15,46,28,0.80) 0%,
+        rgba(26,77,48,0.68) 55%,
+        rgba(26,77,48,0.50) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Fallback gradient when video hasn't loaded */
+    .hero-fallback {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0f2e1c 0%, #1a4d30 50%, #2d6a4a 100%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+      max-width: 820px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      padding: 0.4rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 5.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: #f5a96a;
+    }
+
+    .hero-content p {
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      opacity: 0.88;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      width: 1.5px;
+      height: 28px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 2px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ---- ABOUT SPLIT ---- */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-img-wrap {
+      position: relative;
+    }
+
+    .about-img-placeholder {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, var(--green-pale) 0%, #d4eadb 100%);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: var(--green-mid);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-img-placeholder span {
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--orange);
+      color: #fff;
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius);
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      font-weight: 700;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2rem);
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .about-text p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.75;
+    }
+
+    .about-points {
+      margin: 1.5rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .about-point::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: var(--green-pale);
+      color: var(--green-mid);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    @media (max-width: 768px) {
+      .about-split { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-badge { bottom: -12px; right: -4px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <div class="logo">
-                    <div class="logo-image"></div>
-                    <div class="logo-text">
-                        <span class="gingerbread">Gingerbread</span>
-                        <span class="subtitle">Edinburgh & Lothian</span>
-                    </div>
-                </div>
-                <div class="contact-header">
-                    <a href="tel:01314781391" class="phone-number">📞  07825 925846</a>
-                    <a href="#contact" onclick="showSection('contact')" class="donate-btn">Get In Touch</a>
-                </div>
-            </div>
-        </header>
 
-        <nav>
-            <ul>
-                <li><a onclick="showSection('home')">Home</a></li>
-                <li><a onclick="showSection('services')">Our Services</a></li>
-                <li><a onclick="showSection('fees')">Fees & Booking</a></li>
-                <li><a onclick="showSection('locations')">Locations</a></li>
-                <li><a onclick="showSection('contact')">Contact</a></li>
-                <li><a onclick="showSection('resources')">Resources</a></li>
-                <li><a onclick="showSection('jobs')">Jobs</a></li>
-                <li><a onclick="showSection('donate')">Donate</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <div id="home" class="section" style="padding: 0;">
-                <!-- Hero Section -->
-                <div class="hero">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1>We are Gingerbread Edinburgh & Lothian</h1>
-                            <p>Supporting single parent families across Edinburgh and Lothian with quality childcare, after-school clubs, and holiday programs since 1985.</p>
-                            <button class="cta-button" onclick="showSection('contact')">Get In Touch</button>
-                            <button class="cta-button" onclick="showSection('donate')" style="background: #ff6b35; margin-left: 1rem;">Donate Now</button>
-                        </div>
-                        <div class="hero-image">
-                            <div class="placeholder-image">
-                                👨‍👩‍👧‍👦<br>
-                                Professional Childcare<br>
-                                Since 1985
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Welcome/About Section -->
-                <div class="welcome-section">
-                    <h2>Supporting Single Parent Families Since 1985</h2>
-                    <p>For over four decades, Gingerbread Edinburgh & Lothian has been a trusted partner for single parent families across Edinburgh. As a registered Scottish charity (SC125546), we understand the unique challenges facing single parents and provide professional, affordable childcare solutions that enable parents to work, study, and build better futures for their families.</p>
-                    
-                    <p>Our experienced team operates from four strategic locations across Edinburgh, ensuring quality care is accessible in your local community. We're not just a childcare provider – we're a support network that believes every single parent family deserves the opportunity to thrive.</p>
-                </div>
-
-                <!-- Impact Stats Section -->
-                <div class="section">
-                    <h2>Our Impact</h2>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="stat-number">40+</span>
-                            <span class="stat-label">Years Supporting Families</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">4</span>
-                            <span class="stat-label">School Locations</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">Families Supported Annually</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">1985</span>
-                            <span class="stat-label">Established</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Services Preview -->
-                <div class="services-preview">
-                    <h2>What Makes Us Different</h2>
-                    <p>We specialize in supporting single parent families with flexible, affordable childcare that fits around your work and study commitments.</p>
-                    
-                    <div class="service-highlight">
-                        <div class="highlight-card">
-                            <div class="highlight-icon">🏫</div>
-                            <h3>School-Based Clubs</h3>
-                            <p>Convenient after-school care at Dalry, Lorne, St Cuthbert's, and Tollcross primary schools</p>
-                        </div>
-                        <div class="highlight-card">
-                            <div class="highlight-icon">💰</div>
-                            <h3>Reduced Fees for Single Parents</h3>
-                            <p>Special pricing structure designed specifically for single parent families</p>
-                        </div>
-                        <div class="highlight-card">
-                            <div class="highlight-icon">🎯</div>
-                            <h3>Holiday & In-Service Care</h3>
-                            <p>Full-day programs during school holidays and in-service days</p>
-                        </div>
-                        <div class="highlight-card">
-                            <div class="highlight-icon">🤝</div>
-                            <h3>Flexible Payment Options</h3>
-                            <p>We accept childcare vouchers, Universal Credit, and Job Centre payments</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonials Section -->
-                <div class="testimonials-section">
-                    <h2>What Parents Say</h2>
-                    <p>Real feedback from single parents who trust us with their children's care.</p>
-                    
-                    <div class="testimonial-grid">
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">"Gingerbread has been a lifeline for our family. The staff genuinely care about the children and understand the pressures facing single parents."</div>
-                            <div class="testimonial-author">— Sarah, Single Mum of Two</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">"The after-school club at Tollcross has allowed me to return to work with complete confidence that my daughter is safe and happy."</div>
-                            <div class="testimonial-author">— Marcus, Working Parent</div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">"Affordable, professional, and flexible. Gingerbread understands that every family's situation is different."</div>
-                            <div class="testimonial-author">— Lisa, University Student</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Latest News Section -->
-                <div class="news-section">
-                    <h2>Latest Updates</h2>
-                    <p>Stay informed about our services, achievements, and community involvement.</p>
-                    
-                    <div class="news-grid">
-                        <div class="news-card">
-                            <div class="news-date">June 2025</div>
-                            <div class="news-content">
-                                <h3>New Website Launch</h3>
-                                <p>We've launched our new website to make it easier for families to access information about our services and get in touch with our team.</p>
-                            </div>
-                        </div>
-                        <div class="news-card">
-                            <div class="news-date">Winter 2024</div>
-                            <div class="news-content">
-                                <h3>Holiday Program Success</h3>
-                                <p>Our winter holiday programs provided essential childcare for working parents throughout the Christmas break with exciting activities and educational trips.</p>
-                            </div>
-                        </div>
-                        <div class="news-card">
-                            <div class="news-date">Ongoing</div>
-                            <div class="news-content">
-                                <h3>Staff Recruitment</h3>
-                                <p>We're always looking for passionate individuals to join our team. Contact us if you're interested in making a difference in children's lives.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Call to Action Section -->
-                <div class="important-notice">
-                    <h3>📞 Ready to Register?</h3>
-                    <p>Mobile: 07825 925846</p>
-                    <p style="margin-top: 1rem;">Contact us today to discuss your childcare needs and secure a place for your child.</p>
-                </div>
-            </div>
-
-            <div id="services" class="section hidden">
-                <h2>Our Services</h2>
-                <p>We provide comprehensive childcare services across Edinburgh to support working single parents.</p>
-
-                <div class="grid">
-                    <div class="card">
-                        <h3>After School Clubs</h3>
-                        <p><strong>What's Included:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Professional supervision and activities</li>
-                            <li>Healthy snacks (fruit provided)</li>
-                            <li>Educational games and activities</li>
-                            <li>Safe, nurturing environment</li>
-                        </ul>
-                        <p><strong>What to Bring:</strong> Packed lunch and nut-free snack</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Holiday Clubs</h3>
-                        <p><strong>Full Day Care:</strong> 8:30am - 5:25pm (Collection by 5:30pm)</p>
-                        <p><strong>Activities Include:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Educational trips and outings</li>
-                            <li>Arts and crafts</li>
-                            <li>Sports and games</li>
-                            <li>Structured learning activities</li>
-                        </ul>
-                        <p><strong>Advance Booking Required</strong></p>
-                    </div>
-
-                    <div class="card">
-                        <h3>In-Service Day Cover</h3>
-                        <p>We provide cover for Tollcross Primary School in-service days from 8:30am - 5:30pm.</p>
-                        <p><strong>Contact our office for dates and booking.</strong></p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Additional Support</h3>
-                        <p><strong>We Accept:</strong></p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Childcare vouchers through employers</li>
-                            <li>Universal Credit support</li>
-                            <li>Job Centre payments</li>
-                            <li>College/University funding streams</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Important Notes</h3>
-                    <p><strong>Public Holidays:</strong> We are closed on public holidays - please check with office or play leader for specific dates.</p>
-                    <p><strong>Trip Costs:</strong> Parents may be asked to contribute to trip costs, payable in advance via internet banking.</p>
-                </div>
-            </div>
-
-            <div id="fees" class="section fee-section hidden">
-                <h2>Fees & Payment Structure</h2>
-                
-                <div class="important-notice">
-                    <h3>⏰ PAYMENT DEADLINE</h3>
-                    <p>ALL FEES MUST BE PAID BY 2PM ON MONDAY OF EACH WEEK</p>
-                    <p>Late payments may incur £20 fee | Persistent late payment may result in place cancellation</p>
-                </div>
-
-                <div class="bank-details">
-                    <h3>Bank Details for Payments</h3>
-                    <p><strong>Bank:</strong> Bank of Scotland</p>
-                    <p><strong>Account Name:</strong> Gingerbread</p>
-                    <p><strong>Sort Code:</strong> 80-11-20</p>
-                    <p><strong>Account Number:</strong> 00275813</p>
-                    <p><strong>Reference:</strong> (Child's name + club they attend)</p>
-                </div>
-
-                <h3 style="text-align: center; margin: 3rem 0 2rem 0;">Single Parent Family Fees</h3>
-                <div class="fee-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service</th>
-                                <th>First Child</th>
-                                <th>Additional Children</th>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Admin Fee (Annual)</strong></td>
-                                <td>£25</td>
-                                <td>Per family</td>
-                                <td>Due by 31st March</td>
-                            </tr>
-                            <tr>
-                                <td><strong>After School - Weekly</strong></td>
-                                <td>£41</td>
-                                <td>£36</td>
-                                <td>Monday-Friday</td>
-                            </tr>
-                            <tr>
-                                <td><strong>After School - Daily</strong></td>
-                                <td>£27</td>
-                                <td>£25</td>
-                                <td>Single day booking</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Hourly (Mon-Thu)</strong></td>
-                                <td>£7</td>
-                                <td>£7</td>
-                                <td>1-2 hours max</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Friday Hourly</strong></td>
-                                <td>£28 minimum</td>
-                                <td>£28 minimum</td>
-                                <td>4 hours min, £7/hour after</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Holiday Club - Weekly</strong></td>
-                                <td>£68</td>
-                                <td>£63</td>
-                                <td>5 days</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Holiday Club - Daily</strong></td>
-                                <td>£27</td>
-                                <td>£25</td>
-                                <td>Single day</td>
-                            </tr>
-                            <tr>
-                                <td><strong>In-Service Day</strong></td>
-                                <td>£15</td>
-                                <td>£13</td>
-                                <td>Tollcross Primary only</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <h3 style="text-align: center; margin: 3rem 0 2rem 0;">Two Parent Family Fees</h3>
-                <div class="fee-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Service</th>
-                                <th>First Child</th>
-                                <th>Additional Children</th>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>After School - Weekly</strong></td>
-                                <td>£52</td>
-                                <td>£46</td>
-                                <td>Monday-Friday</td>
-                            </tr>
-                            <tr>
-                                <td><strong>After School - Daily</strong></td>
-                                <td>£27</td>
-                                <td>£25</td>
-                                <td>Single day booking</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Holiday Club - Weekly</strong></td>
-                                <td>£78</td>
-                                <td>£73</td>
-                                <td>5 days</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Holiday Club - Daily</strong></td>
-                                <td>£27</td>
-                                <td>£25</td>
-                                <td>Single day</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Important Payment Policies</h3>
-                    <p><strong>Cancellation:</strong> Full week's notice required to cancel your child's place</p>
-                    <p><strong>No Shows:</strong> You must pay for booked days even if not used</p>
-                    <p><strong>Credits:</strong> Unused credits will be kept for future use - no cash reimbursements</p>
-                    <p><strong>Late Collection Fee:</strong> £25 for continuous late collection</p>
-                    <p><strong>Holiday Club Penalty:</strong> £40 per day if child attends without confirmed booking</p>
-                </div>
-            </div>
-
-            <div id="locations" class="section hidden">
-                <h2>Our Locations</h2>
-                <p>We operate after-school clubs at four primary schools across Edinburgh, providing convenient childcare close to your child's school.</p>
-
-                <div class="grid">
-                    <div class="location-card card">
-                        <h3>📍 Dalry Primary School</h3>
-                        <p><strong>Location:</strong> 4 Cathcart Place, Edinburgh EH11 2JB</p>
-                        <div class="times">
-                            <h4>Club Times:</h4>
-                            <p><strong>Monday - Thursday:</strong> 2:30pm - 5:45pm</p>
-                            <p><strong>Friday:</strong> 12:00 noon - 5:45pm</p>
-                            <p><em>Collection by 5:30pm</em></p>
-                        </div>
-                    </div>
-
-                    <div class="location-card card">
-                        <h3>📍 Lorne Primary School</h3>
-                        <p><strong>Location:</strong> 7 Lorne Street, Edinburgh EH6 8QS</p>
-                        <div class="times">
-                            <h4>Club Times:</h4>
-                            <p><strong>Monday - Thursday:</strong> 2:30pm - 5:45pm</p>
-                            <p><strong>Friday:</strong> 12:00 noon - 5:45pm</p>
-                            <p><em>Collection by 5:30pm</em></p>
-                        </div>
-                    </div>
-
-                    <div class="location-card card">
-                        <h3>📍 St Cuthbert's Primary School</h3>
-                        <p><strong>Location:</strong> 9 Hutchison Crossway, Edinburgh EH14 1RP</p>
-                        <div class="times">
-                            <h4>Club Times:</h4>
-                            <p><strong>Monday - Thursday:</strong> 2:30pm - 6:00pm</p>
-                            <p><strong>Friday:</strong> 12:00 noon - 6:00pm</p>
-                            <p><em>Collection by 5:45pm</em></p>
-                        </div>
-                    </div>
-
-                    <div class="location-card card">
-                        <h3>📍 Tollcross Primary School</h3>
-                        <p><strong>Location:</strong> 117-119 Fountainbridge, Edinburgh EH3 9QG</p>
-                        <div class="times">
-                            <h4>Club Times:</h4>
-                            <p><strong>Monday - Thursday:</strong> 2:30pm - 6:00pm</p>
-                            <p><strong>Friday:</strong> 12:00 noon - 6:00pm</p>
-                            <p><em>Collection by 5:45pm</em></p>
-                        </div>
-                        <div class="contact-info" style="margin-top: 1rem;">
-                            <h4>🎪 Holiday Club Venue</h4>
-                            <p><strong>Times:</strong> Monday to Friday, 8:30am - 5:25pm</p>
-                            <p><strong>Collection:</strong> By 5:30pm</p>
-                            <p><em>Separate booking form required</em></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="contact" class="section hidden">
-                <h2>Contact Us</h2>
-                <p>Get in touch with our team for bookings, information, or support.</p>
-
-                <div class="grid">
-                    <div class="card">
-                        <h3>📞 Main Office</h3>
-                        <p><strong>Mobile:</strong> <a href="tel:07825925846">07825 925846</a></p>
-                        <p><strong>Email:</strong> contact@gingerbreadcharity.org</p>
-                        <p><strong>Address:</strong> 117-119 Fountainbridge, Edinburgh EH3 9QG</p>
-                    </div>
-                    <div class="card">
-                        <h3>💳 Payment Enquiries</h3>
-                        <p>For all payment-related questions, contact our office during business hours.</p>
-                        <p><strong>Payment Reference:</strong> Child's name + club name</p>
-                        <p><strong>Payment Method:</strong> Bank transfer only</p>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Office Hours</h3>
-                    <p><strong>Office Hours:</strong> Monday-Friday: 10am-5pm | Closed weekends</p>
-                    <p><strong>Emergency Contact:</strong> 07825 925846</p>
-                </div>
-            </div>
-
-            <div id="resources" class="section hidden">
-                <h2>Resources for Single Parents in Scotland</h2>
-                <p>Find the best advice and support services available to single parents across Scotland.</p>
-
-                <h3 style="text-align: center; margin: 2rem 0;">National Resources</h3>
-                <div class="resource-links">
-                    <a href="https://www.citizensadvice.org.uk/scotland/" target="_blank" class="resource-link">Citizens Advice Scotland</a>
-                    <a href="https://www.moneyadvicescotland.org.uk/" target="_blank" class="resource-link">Money Advice Scotland</a>
-                    <a href="https://scotland.shelter.org.uk/" target="_blank" class="resource-link">Shelter Scotland</a>
-                    <a href="https://www.gov.scot/policies/families/" target="_blank" class="resource-link">Scottish Government - Single Parents</a>
-                </div>
-
-                <h3 style="text-align: center; margin: 2rem 0;">Benefits and Financial Support</h3>
-                <div class="resource-links">
-                    <a href="https://www.mygov.scot/benefits/" target="_blank" class="resource-link">mygov.scot - Benefits</a>
-                    <a href="https://www.turn2us.org.uk/Benefit-guides/Benefit-Calculator" target="_blank" class="resource-link">Turn2us Benefits Calculator</a>
-                    <a href="https://www.gov.uk/child-maintenance-service" target="_blank" class="resource-link">Child Maintenance Service</a>
-                    <a href="https://www.gov.scot/policies/social-security/scottish-welfare-fund/" target="_blank" class="resource-link">Scottish Welfare Fund</a>
-                </div>
-
-                <h3 style="text-align: center; margin: 2rem 0;">Employment and Training</h3>
-                <div class="resource-links">
-                    <a href="https://www.skillsdevelopmentscotland.co.uk/" target="_blank" class="resource-link">Skills Development Scotland</a>
-                    <a href="https://www.gov.uk/contact-jobcentre-plus" target="_blank" class="resource-link">Job Centre Plus</a>
-                    <a href="https://www.gov.uk/tax-credits-calculator" target="_blank" class="resource-link">Working Tax Credit Calculator</a>
-                    <a href="https://www.gov.scot/policies/families/childcare/" target="_blank" class="resource-link">Childcare Support Scotland</a>
-                </div>
-
-                <h3 style="text-align: center; margin: 2rem 0;">Housing and Legal</h3>
-                <div class="resource-links">
-                    <a href="https://www.edinburgh.gov.uk/housing" target="_blank" class="resource-link">Edinburgh Council Housing</a>
-                    <a href="https://www.sfha.co.uk/" target="_blank" class="resource-link">Lothian Housing Associations</a>
-                    <a href="https://www.slab.org.uk/" target="_blank" class="resource-link">Scottish Legal Aid</a>
-                    <a href="https://www.familymediationscotland.org.uk/" target="_blank" class="resource-link">Family Mediation Scotland</a>
-                </div>
-
-                <h3 style="text-align: center; margin: 2rem 0;">Health and Wellbeing</h3>
-                <div class="resource-links">
-                    <a href="https://www.nhs.uk/mental-health/" target="_blank" class="resource-link">NHS Scotland - Mental Health</a>
-                    <a href="https://www.home-start.org.uk/" target="_blank" class="resource-link">Home-Start Scotland</a>
-                    <a href="https://www.children1st.org.uk/help-for-families/parentline-scotland/" target="_blank" class="resource-link">Parentline Scotland</a>
-                    <a href="https://www.youngminds.org.uk/parent/" target="_blank" class="resource-link">Young Minds - Parent Support</a>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Can't Find What You Need?</h3>
-                    <p>Our team can help you navigate these resources and find the right support for your situation.</p>
-                    <p>Call us on mobile 07825 925846</p>
-                </div>
-            </div>
-
-            <div id="jobs" class="section hidden">
-                <h2>Work With Us</h2>
-                <p>Join our dedicated team and help make a difference in the lives of single parent families across Edinburgh and Lothian.</p>
-
-                <div class="grid">
-                    <div class="card">
-                        <h3>Current Opportunities</h3>
-                        <p>We are always looking for passionate individuals to join our team:</p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Play Leaders</li>
-                            <li>After School Club Assistants</li>
-                            <li>Holiday Club Coordinators</li>
-                            <li>Administrative Support</li>
-                        </ul>
-                        <p><strong>Requirements:</strong> Experience working with children, relevant qualifications, and a passion for supporting families.</p>
-                    </div>
-                    
-                    <div class="card">
-                        <h3>Volunteer Opportunities</h3>
-                        <p>Support our mission through volunteering:</p>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Activity support during clubs</li>
-                            <li>Trip assistance</li>
-                            <li>Administrative help</li>
-                            <li>Special events support</li>
-                        </ul>
-                        <p>Perfect for students, retirees, or anyone wanting to give back to the community.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>Benefits of Working With Us</h3>
-                        <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                            <li>Competitive rates</li>
-                            <li>Flexible scheduling</li>
-                            <li>Training provided</li>
-                            <li>Supportive team environment</li>
-                            <li>Making a real difference</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="contact-info">
-                    <h3>How to Apply</h3>
-                    <p>Interested in joining our team? Contact us to discuss current opportunities.</p>
-                    <p><strong>Mobile:</strong> 07825 925846</p>
-                    <p><strong>Email:</strong> contact@gingerbreadcharity.org</p>
-                </div>
-
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button class="cta-button" onclick="showSection('contact')">Apply Today</button>
-                </div>
-            </div>
-
-            <div id="donate" class="section hidden">
-                <h2>Support Our Mission</h2>
-                <p>Your donations help us provide quality childcare, better equipment, educational games, and healthy snacks for single parent families across Edinburgh and Lothian.</p>
-
-                <div class="important-notice">
-                    <h3>Make a Donation Today</h3>
-                    <p>Every donation, no matter the size, makes a real difference to the families we support.</p>
-                </div>
-
-                <div class="bank-details">
-                    <h3>Donation Details</h3>
-                    <p><strong>Bank:</strong> Bank of Scotland</p>
-                    <p><strong>Account Name:</strong> Gingerbread</p>
-                    <p><strong>Sort Code:</strong> 80-11-20</p>
-                    <p><strong>Account Number:</strong> 00275813</p>
-                    <p><strong>Reference:</strong> DONATION</p>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Your Impact</h3>
-                    <p>Your donations directly support:</p>
-                    <ul style="margin: 1rem 0; padding-left: 2rem; text-align: left;">
-                        <li>Quality childcare for single parent families</li>
-                        <li>Better equipment and learning resources</li>
-                        <li>Educational games and activities</li>
-                        <li>Healthy snacks for children</li>
-                    </ul>
-                </div>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
-                <p>Registered Charity in Scotland. Charity Number: SC125546</p>
-                <p>Part of the Gingerbread network supporting single parent families across the UK</p>
-                <p style="margin-top: 1.5rem; font-weight: bold;">Mobile: 07825 925846</p>
-            </div>
-        </footer>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="nav-logo-text">
+          <span class="brand">Gingerbread</span>
+          <span class="tagline">Edinburgh & Lothian</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="fees.html">Fees & Booking</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </nav>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.section, .hero');
-            sections.forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show the selected section
-            const targetSection = document.getElementById(sectionId);
-            if (targetSection) {
-                targetSection.classList.remove('hidden');
-                
-                // Smooth scroll to top
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-                
-                // Update URL hash
-                window.location.hash = sectionId;
-            }
-        }
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-fallback"></div>
+    <video class="hero-video" autoplay muted loop playsinline poster="">
+      <source src="images/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">🏅 Est. 1985 &nbsp;·&nbsp; Registered Charity SC125546</div>
+      <h1>Caring for Children,<br><em>Empowering Families</em></h1>
+      <p>Supporting single parent families across Edinburgh and Lothian with quality childcare, after-school clubs, and holiday programmes since 1985.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn btn-orange">Get In Touch</a>
+        <a href="donate.html" class="btn btn-outline-white">Donate Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Scroll</div>
+  </section>
 
-        // Show home section by default or section from URL hash
-        document.addEventListener('DOMContentLoaded', function() {
-            const hash = window.location.hash.substring(1);
-            if (hash && document.getElementById(hash)) {
-                showSection(hash);
-            } else {
-                showSection('home');
-            }
-        });
+  <!-- STATS BAR -->
+  <div class="stats-bar reveal">
+    <div class="container">
+      <div class="stat-item">
+        <span class="stat-number"><span data-target="40" data-suffix="+">40+</span></span>
+        <span class="stat-label">Years Supporting Families</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number"><span data-target="4">4</span></span>
+        <span class="stat-label">School Locations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number"><span data-target="1000" data-suffix="+">1000+</span></span>
+        <span class="stat-label">Families Supported Annually</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number"><span data-target="1985">1985</span></span>
+        <span class="stat-label">Established</span>
+      </div>
+    </div>
+  </div>
 
-        // Add click handlers for phone numbers
-        document.addEventListener('DOMContentLoaded', function() {
-            // Make phone numbers clickable
-            const phoneNumbers = document.querySelectorAll('a[href^="tel:"]');
-            phoneNumbers.forEach(phone => {
-                phone.style.color = '#2d5a3d';
-                phone.style.textDecoration = 'none';
-                phone.style.fontWeight = 'bold';
-            });
-        });
-    </script>
+  <!-- ABOUT SECTION -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="about-split">
+        <div class="about-img-wrap reveal">
+          <div class="about-img-placeholder">
+            👨‍👩‍👧
+            <span>Add your photo here</span>
+          </div>
+          <div class="about-badge">40+ Years<br>of Care</div>
+        </div>
+        <div class="about-text reveal reveal-delay-2">
+          <div class="label-tag">About Us</div>
+          <h2>Supporting Single Parent Families Since 1985</h2>
+          <p>For over four decades, Gingerbread Edinburgh & Lothian has been a trusted partner for single parent families across Edinburgh. As a registered Scottish charity, we understand the unique challenges facing single parents.</p>
+          <p>We provide professional, affordable childcare solutions that enable parents to work, study, and build better futures for their families — from four convenient school-based locations across Edinburgh.</p>
+          <div class="about-points">
+            <div class="about-point">School-based after-school clubs at 4 Edinburgh primary schools</div>
+            <div class="about-point">Reduced fees specifically designed for single parent families</div>
+            <div class="about-point">Full-day holiday and in-service day cover</div>
+            <div class="about-point">Accepts childcare vouchers, Universal Credit & Job Centre payments</div>
+          </div>
+          <a href="services.html" class="btn btn-green">Explore Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="label-tag reveal">Why Choose Us</div>
+      <h2 class="section-title reveal">What Makes Us Different</h2>
+      <p class="section-subtitle reveal">We specialise in supporting single parent families with flexible, affordable childcare that fits around your work and study commitments.</p>
+      <div class="grid-4">
+        <div class="highlight-card reveal reveal-delay-1">
+          <div class="card-icon">🏫</div>
+          <h3>School-Based Clubs</h3>
+          <p>Convenient after-school care at Dalry, Lorne, St Cuthbert's, and Tollcross primary schools</p>
+        </div>
+        <div class="highlight-card reveal reveal-delay-2">
+          <div class="card-icon">💚</div>
+          <h3>Reduced Fees</h3>
+          <p>Special pricing structure designed specifically for single parent families</p>
+        </div>
+        <div class="highlight-card reveal reveal-delay-3">
+          <div class="card-icon">🎯</div>
+          <h3>Holiday & In-Service Care</h3>
+          <p>Full-day programmes during school holidays and in-service days</p>
+        </div>
+        <div class="highlight-card reveal reveal-delay-4">
+          <div class="card-icon">🤝</div>
+          <h3>Flexible Payments</h3>
+          <p>We accept childcare vouchers, Universal Credit, and Job Centre payments</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="label-tag reveal">Our Services</div>
+      <h2 class="section-title reveal">Childcare That Works For You</h2>
+      <p class="section-subtitle reveal">Comprehensive care options built around the lives of working single parents.</p>
+      <div class="grid-3">
+        <div class="card card-accent-green reveal reveal-delay-1">
+          <div class="card-icon">🏃</div>
+          <h3>After School Clubs</h3>
+          <p>Professional supervision, healthy snacks, educational games and activities at four schools across Edinburgh. Mon–Fri.</p>
+          <br />
+          <a href="services.html" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1.4rem;">Learn More</a>
+        </div>
+        <div class="card card-accent-orange reveal reveal-delay-2">
+          <div class="card-icon">🌞</div>
+          <h3>Holiday Clubs</h3>
+          <p>Full-day care from 8:30am–5:25pm during school holidays. Educational trips, arts & crafts, sports, and structured activities.</p>
+          <br />
+          <a href="services.html" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1.4rem;">Learn More</a>
+        </div>
+        <div class="card card-accent-green reveal reveal-delay-3">
+          <div class="card-icon">📅</div>
+          <h3>In-Service Day Cover</h3>
+          <p>Cover provided at Tollcross Primary School for in-service days, 8:30am–5:30pm. Contact us for upcoming dates.</p>
+          <br />
+          <a href="services.html" class="btn btn-outline-green" style="font-size:0.82rem; padding:0.6rem 1.4rem;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="label-tag reveal">Parent Stories</div>
+      <h2 class="section-title reveal">What Parents Say</h2>
+      <p class="section-subtitle reveal">Real feedback from single parents who trust us with their children's care.</p>
+      <div class="grid-3">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Gingerbread has been a lifeline for our family. The staff genuinely care about the children and understand the pressures facing single parents."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div>
+              <div class="author-name">Sarah</div>
+              <div class="author-desc">Single Mum of Two</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The after-school club at Tollcross has allowed me to return to work with complete confidence that my daughter is safe and happy."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div>
+              <div class="author-name">Marcus</div>
+              <div class="author-desc">Working Parent</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Affordable, professional, and flexible. Gingerbread understands that every family's situation is different."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">L</div>
+            <div>
+              <div class="author-name">Lisa</div>
+              <div class="author-desc">University Student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST UPDATES -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="label-tag reveal">News & Updates</div>
+      <h2 class="section-title reveal">Latest Updates</h2>
+      <p class="section-subtitle reveal">Stay informed about our services, achievements, and community involvement.</p>
+      <div class="grid-3">
+        <div class="news-card reveal reveal-delay-1">
+          <div class="news-date-badge">📅 June 2025</div>
+          <div class="news-body">
+            <h3>New Website Launch</h3>
+            <p>We've launched our new website to make it easier for families to access information about our services and get in touch with our team.</p>
+          </div>
+        </div>
+        <div class="news-card reveal reveal-delay-2">
+          <div class="news-date-badge">❄️ Winter 2024</div>
+          <div class="news-body">
+            <h3>Holiday Programme Success</h3>
+            <p>Our winter holiday programmes provided essential childcare for working parents throughout the Christmas break with exciting activities and educational trips.</p>
+          </div>
+        </div>
+        <div class="news-card reveal reveal-delay-3">
+          <div class="news-date-badge">🔔 Ongoing</div>
+          <div class="news-body">
+            <h3>Staff Recruitment</h3>
+            <p>We're always looking for passionate individuals to join our team. Contact us if you're interested in making a difference in children's lives.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2 class="reveal">Ready to Register Your Child?</h2>
+    <p class="reveal reveal-delay-1">Contact us today to discuss your childcare needs and secure a place for your child at one of our clubs.</p>
+    <div class="cta-banner-buttons reveal reveal-delay-2">
+      <a href="contact.html" class="btn btn-orange">Get In Touch</a>
+      <a href="fees.html" class="btn btn-outline-white">View Fees</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="brand-name">Gingerbread Edinburgh & Lothian</div>
+        <p>Supporting single parent families across Edinburgh with quality childcare, after-school clubs, and holiday programmes since 1985.</p>
+        <div class="footer-socials">
+          <a href="#" target="_blank" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" target="_blank" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="fees.html">Fees & Booking</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="jobs.html">Jobs & Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">After School Clubs</a></li>
+          <li><a href="services.html">Holiday Clubs</a></li>
+          <li><a href="services.html">In-Service Day Cover</a></li>
+          <li><a href="fees.html">Fees Structure</a></li>
+          <li><a href="locations.html">Dalry Primary</a></li>
+          <li><a href="locations.html">Lorne Primary</a></li>
+          <li><a href="locations.html">St Cuthbert's Primary</a></li>
+          <li><a href="locations.html">Tollcross Primary</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span><a href="tel:07825925846" style="color:rgba(255,255,255,0.65);">07825 925846</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:contact@gingerbreadcharity.org" style="color:rgba(255,255,255,0.65);">contact@gingerbreadcharity.org</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>117–119 Fountainbridge, Edinburgh EH3 9QG</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🕐</span>
+          <span>Mon–Fri: 10am–5pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
+      <span class="charity-badge">Registered Charity SC125546</span>
+      <p>Part of the Gingerbread network supporting single parent families across the UK</p>
+    </div>
+  </footer>
+
+  <!-- Floating Phone Button -->
+  <a href="tel:07825925846" class="float-phone" aria-label="Call us">
+    📞
+    <span class="tooltip">07825 925846</span>
+  </a>
+
+  <script src="main.js"></script>
 </body>
 </html>

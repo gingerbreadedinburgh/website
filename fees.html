@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gingerbread Edinburgh & Lothian fee structure for single parent and two parent families. After school, holiday club and in-service day fees." />
+  <title>Fees & Booking | Gingerbread Edinburgh & Lothian</title>
+  <link rel="icon" type="image/jpeg" href="Gingerbread%20LOGO.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .policy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .policy-item {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--green-light);
+    }
+
+    .policy-item h4 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .policy-item p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin: 3rem 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-heading::before,
+    .section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-heading h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      white-space: nowrap;
+      padding: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="nav-logo-text">
+          <span class="brand">Gingerbread</span>
+          <span class="tagline">Edinburgh & Lothian</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="fees.html">Fees & Booking</a></li>
+        <li><a href="locations.html">Locations</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="jobs.html">Jobs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html" class="nav-donate">Donate</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>›</span> <span>Fees & Booking</span>
+    </div>
+    <h1>Fees & Booking</h1>
+    <p>Transparent, affordable pricing with reduced rates for single parent families.</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="section section-white">
+    <div class="container" style="max-width: 1000px;">
+
+      <!-- Payment Deadline -->
+      <div class="notice-red reveal">
+        <h3>⏰ Payment Deadline</h3>
+        <p>ALL FEES MUST BE PAID BY 2PM ON MONDAY OF EACH WEEK</p>
+        <p>Late payments may incur a £20 fee · Persistent late payment may result in place cancellation</p>
+      </div>
+
+      <!-- Bank Details -->
+      <div class="bank-box reveal">
+        <h3>🏦 Bank Details for Payments</h3>
+        <p><strong>Bank:</strong> Bank of Scotland</p>
+        <p><strong>Account Name:</strong> Gingerbread</p>
+        <p><strong>Sort Code:</strong> 80-11-20</p>
+        <p><strong>Account Number:</strong> 00275813</p>
+        <p><strong>Reference:</strong> Child's name + club they attend</p>
+      </div>
+
+      <!-- Single Parent Fees -->
+      <div class="section-heading reveal">
+        <h3>💚 Single Parent Family Fees</h3>
+      </div>
+
+      <div class="fee-table-wrap reveal">
+        <h3>Single Parent — After School & Holiday Clubs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>First Child</th>
+              <th>Additional Children</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Admin Fee (Annual)</strong></td>
+              <td>£25</td>
+              <td>Per family</td>
+              <td>Due by 31st March</td>
+            </tr>
+            <tr>
+              <td><strong>After School — Weekly</strong></td>
+              <td>£41</td>
+              <td>£36</td>
+              <td>Monday–Friday</td>
+            </tr>
+            <tr>
+              <td><strong>After School — Daily</strong></td>
+              <td>£27</td>
+              <td>£25</td>
+              <td>Single day booking</td>
+            </tr>
+            <tr>
+              <td><strong>Hourly (Mon–Thu)</strong></td>
+              <td>£7</td>
+              <td>£7</td>
+              <td>1–2 hours max</td>
+            </tr>
+            <tr>
+              <td><strong>Friday Hourly</strong></td>
+              <td>£28 minimum</td>
+              <td>£28 minimum</td>
+              <td>4 hours min, £7/hour after</td>
+            </tr>
+            <tr>
+              <td><strong>Holiday Club — Weekly</strong></td>
+              <td>£68</td>
+              <td>£63</td>
+              <td>5 days</td>
+            </tr>
+            <tr>
+              <td><strong>Holiday Club — Daily</strong></td>
+              <td>£27</td>
+              <td>£25</td>
+              <td>Single day</td>
+            </tr>
+            <tr>
+              <td><strong>In-Service Day</strong></td>
+              <td>£15</td>
+              <td>£13</td>
+              <td>Tollcross Primary only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Two Parent Fees -->
+      <div class="section-heading reveal">
+        <h3>👨‍👩‍👧 Two Parent Family Fees</h3>
+      </div>
+
+      <div class="fee-table-wrap reveal">
+        <h3>Two Parent — After School & Holiday Clubs</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>First Child</th>
+              <th>Additional Children</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>After School — Weekly</strong></td>
+              <td>£52</td>
+              <td>£46</td>
+              <td>Monday–Friday</td>
+            </tr>
+            <tr>
+              <td><strong>After School — Daily</strong></td>
+              <td>£27</td>
+              <td>£25</td>
+              <td>Single day booking</td>
+            </tr>
+            <tr>
+              <td><strong>Holiday Club — Weekly</strong></td>
+              <td>£78</td>
+              <td>£73</td>
+              <td>5 days</td>
+            </tr>
+            <tr>
+              <td><strong>Holiday Club — Daily</strong></td>
+              <td>£27</td>
+              <td>£25</td>
+              <td>Single day</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Payment Policies -->
+      <div class="section-heading reveal">
+        <h3>📋 Payment Policies</h3>
+      </div>
+
+      <div class="policy-grid">
+        <div class="policy-item reveal reveal-delay-1">
+          <h4>📆 Cancellation Policy</h4>
+          <p>Full week's notice is required to cancel your child's place. Failure to give notice means fees are still due.</p>
+        </div>
+        <div class="policy-item reveal reveal-delay-2">
+          <h4>🚫 No Shows</h4>
+          <p>You must pay for all booked days even if your child does not attend. No exceptions apply.</p>
+        </div>
+        <div class="policy-item reveal reveal-delay-3">
+          <h4>💰 Credits</h4>
+          <p>Unused credits are kept on your account for future use. No cash reimbursements are made.</p>
+        </div>
+        <div class="policy-item reveal reveal-delay-4">
+          <h4>⏱️ Late Collection</h4>
+          <p>A £25 fee applies for continuous late collections. Please make arrangements to collect on time.</p>
+        </div>
+        <div class="policy-item reveal reveal-delay-1">
+          <h4>⚠️ Holiday Club Penalty</h4>
+          <p>£40 per day applies if a child attends the holiday club without a confirmed prior booking.</p>
+        </div>
+        <div class="policy-item reveal reveal-delay-2">
+          <h4>📅 Admin Fee</h4>
+          <p>Annual admin fee of £25 per family is due by 31st March each year. One fee per family only.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <h2 class="reveal">Have Questions About Fees?</h2>
+    <p class="reveal reveal-delay-1">Our team is happy to help you understand the fee structure and explore payment options available to your family.</p>
+    <div class="cta-banner-buttons reveal reveal-delay-2">
+      <a href="contact.html" class="btn btn-orange">Contact Us</a>
+      <a href="services.html" class="btn btn-outline-white">View Our Services</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Gingerbread%20LOGO.jpg" alt="Gingerbread Logo" />
+        <div class="brand-name">Gingerbread Edinburgh & Lothian</div>
+        <p>Supporting single parent families across Edinburgh with quality childcare since 1985.</p>
+        <div class="footer-socials">
+          <a href="#" target="_blank" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" target="_blank" class="social-btn" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="fees.html">Fees & Booking</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="jobs.html">Jobs & Volunteer</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html">After School Clubs</a></li>
+          <li><a href="services.html">Holiday Clubs</a></li>
+          <li><a href="services.html">In-Service Day Cover</a></li>
+          <li><a href="fees.html">Single Parent Fees</a></li>
+          <li><a href="fees.html">Two Parent Fees</a></li>
+          <li><a href="locations.html">Our Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          <span><a href="tel:07825925846" style="color:rgba(255,255,255,0.65);">07825 925846</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          <span><a href="mailto:contact@gingerbreadcharity.org" style="color:rgba(255,255,255,0.65);">contact@gingerbreadcharity.org</a></span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          <span>117–119 Fountainbridge, Edinburgh EH3 9QG</span>
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">🕐</span>
+          <span>Mon–Fri: 10am–5pm</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Gingerbread Edinburgh and Lothian Project. All rights reserved.</p>
+      <span class="charity-badge">Registered Charity SC125546</span>
+      <p>Part of the Gingerbread network supporting single parent families across the UK</p>
+    </div>
+  </footer>
+
+  <a href="tel:07825925846" class="float-phone" aria-label="Call us">
+    📞
+    <span class="tooltip">07825 925846</span>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
