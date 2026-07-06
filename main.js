@@ -3,6 +3,9 @@
    Global JavaScript
    ============================================ */
 
+/* Mark page as JS-ready so CSS can hide .reveal elements for animation */
+document.documentElement.classList.add('js-loaded');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---- Active Nav Link ---- */
@@ -42,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12 });
 
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* Safety fallback: if any element hasn't revealed after 2.5s, show it anyway */
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
+      el.classList.add('revealed');
+    });
+  }, 2500);
 
   /* ---- Animated Stat Counters ---- */
   function animateCounter(el) {
